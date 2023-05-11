@@ -17,4 +17,11 @@ export default createStore({
       },
     ],
   },
+  // su khac biet getters va state => getters dung de xu ly logic nao do
+  // state de hung du lieu tra ve
+  getters:{
+    userListByBoy(state){
+      return state.user.filter((user) => user.name === 'nam');
+    }
+  }
 });

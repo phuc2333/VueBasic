@@ -1,5 +1,5 @@
 <template>
-  <User v-for="(user, index) in userList" :key="index" :user='user'></User>
+  <User v-for="(user, index) in userListByBoy" :key="index" :user='user'></User>
 </template>
 
 <script>
@@ -29,10 +29,16 @@ export default {
   loading () {
     return true;
    },
+   // ham nay goi lay du lieu tu store de loc ds user co ten la nam 
+   // de tra du lieu ve component
+   userListByBoy(){
+    return this.$store.getters.userListByBoy;
+   },
   // mix this into the outer object with the object spread operator
   ...mapState({
     userList: (state) => state.user,
   })
+
 }
 };
 </script>
